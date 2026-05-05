@@ -68,19 +68,13 @@ load("py-f90nml/1.4.3")
 load("py-pip/23.1.2")
 load("py-click/8.1.7")
 
-setenv("CC","/opt/intel/mpi/2021.13/bin/mpiicx")
-setenv("CXX","/opt/intel/mpi/2021.13/bin/mpiicpx")
-setenv("FC","/opt/intel/mpi/2021.13/bin/mpiifort")
-setenv("I_MPI_CC", "/opt/intel/oneapi/compiler/2024.2/bin/icx")
-setenv("I_MPI_CXX", "/opt/intel/oneapi/compiler/2024.2/bin/icpx")
-setenv("I_MPI_F90", "/opt/intel/oneapi/compiler/2024.2/bin/ifort")
+setenv("F77", "/opt/intel/oneapi/compiler/latest/bin/ifort")
+setenv("FC",  "/opt/intel/oneapi/compiler/latest/bin/ifort")
+setenv("CC",  "/opt/intel/oneapi/compiler/latest/bin/icx")
+setenv("CXX", "/opt/intel/oneapi/compiler/latest/bin/icpx")
+setenv("SERIAL_F77", "/opt/intel/oneapi/compiler/latest/bin/ifort")
+setenv("SERIAL_FC",  "/opt/intel/oneapi/compiler/latest/bin/ifort")
+setenv("SERIAL_CC",  "/opt/intel/oneapi/compiler/latest/bin/icx")
+setenv("SERIAL_CXX", "/opt/intel/oneapi/compiler/latest/bin/icpx")
 
-local mpiexec = '/opt/slurm/bin/srun'
-local mpinproc = '-n'
-setenv('MPIEXEC_EXEC', mpiexec)
-setenv('MPIEXEC_NPROC', mpinproc)
-
-whatis("Name: ".. pkgName)
-whatis("Version: ".. pkgVersion)
-whatis("Category: GDASApp")
-whatis("Description: Load all libraries needed for GDASApp")
+setenv("INTEL_ONEAPI_COMPILERS_ROOT", "/opt/intel/oneapi")
