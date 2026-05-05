@@ -78,3 +78,8 @@ setenv("SERIAL_CC",  "/opt/intel/oneapi/compiler/latest/bin/icx")
 setenv("SERIAL_CXX", "/opt/intel/oneapi/compiler/latest/bin/icpx")
 
 setenv("INTEL_ONEAPI_COMPILERS_ROOT", "/opt/intel/oneapi")
+
+local mpiexec = '/opt/intel/mpi/2021.13/bin/mpiexec'
+local mpinproc = '-n'
+setenv('MPIEXEC_EXEC', mpiexec)
+setenv('MPIEXEC_NPROC', mpinproc)
