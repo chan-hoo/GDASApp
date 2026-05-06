@@ -13,3 +13,8 @@ load("global-workflow-env/1.0.0")
 load("jedi-fv3-env/1.0.0")
 load("jedi-base-env/1.0.0")
 load("libfabric-aws/2.1.0amzn2.0")
+
+local mpiexec = '/opt/intel/mpi/2021.13/bin/mpiexec'
+local mpinproc = '-n'
+setenv('MPIEXEC_EXEC', mpiexec)
+setenv('MPIEXEC_NPROC', mpinproc)
